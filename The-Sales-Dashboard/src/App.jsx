@@ -1,5 +1,5 @@
 import { useState } from "react";
-import DrawerLeft from "./Drawer";
+import MiniDrawer from "./Drawer";
 import RecentOrder from "./RecentOrder";
 // import Grid from "@mui/material/Grid";
 
@@ -8,7 +8,7 @@ function App() {
 
   return (
     <>
-      <DrawerLeft open={open} setOpen={setOpen} />
+      <MiniDrawer open={open} setOpen={setOpen} />
       <RecentOrder />
     </>
   );
