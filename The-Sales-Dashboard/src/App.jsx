@@ -1,5 +1,5 @@
 import { useState } from "react";
-import MiniDrawer from "./Drawer";
+import MiniDrawer from "./MiniDrawer";
 import RecentOrder from "./RecentOrder";
 // import Grid from "@mui/material/Grid";
 
