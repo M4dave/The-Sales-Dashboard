@@ -1,3 +1,5 @@
+//Heading should be present in the left of the dashboard.
+
 import * as React from "react";
 import { styled, useTheme } from "@mui/material/styles";
 import Box from "@mui/material/Box";
@@ -16,12 +18,12 @@ import ListItem from "@mui/material/ListItem";
 import ShoppingCartIcon from "@mui/icons-material/ShoppingCart";
 import ListItemIcon from "@mui/material/ListItemIcon";
 import ListItemText from "@mui/material/ListItemText";
-import DashboardCustomizeIcon from "@mui/icons-material/DashboardCustomize";
 import NotificationsIcon from "@mui/icons-material/Notifications";
 import GroupIcon from "@mui/icons-material/Group";
 import AssignmentIcon from "@mui/icons-material/Assignment";
 import LayersIcon from "@mui/icons-material/Layers";
 import BarChartIcon from "@mui/icons-material/BarChart";
+import DashboardIcon from "@mui/icons-material/Dashboard";
 
 const drawerWidth = 240;
 
@@ -136,6 +138,19 @@ export default function MiniDrawer() {
 
       <Drawer variant="permanent" open={open}>
         <DrawerHeader>
+          <Typography
+            sx={{
+              flexGrow: 1,
+              textAlign: "center",
+              alignItems: "center",
+              fontWeight: "bold",
+            }}
+            variant="h6"
+            noWrap
+            component="div"
+          >
+            Jollibee
+          </Typography>
           <IconButton onClick={handleDrawerClose}>
             {theme.direction === "rtl" ? (
               <ChevronRightIcon />
@@ -150,7 +165,7 @@ export default function MiniDrawer() {
         <List>
           <ListItem button>
             <ListItemIcon>
-              <DashboardCustomizeIcon />
+              <DashboardIcon />
             </ListItemIcon>
             <ListItemText primary="Dashboard" />
           </ListItem>

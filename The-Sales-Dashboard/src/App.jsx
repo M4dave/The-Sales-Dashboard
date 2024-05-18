@@ -1,13 +1,21 @@
 import { useState } from "react";
 import DrawerLeft from "./Drawer";
-// import Revenue from "./Revenue";
+import RecentOrder from "./RecentOrder";
+// import Grid from "@mui/material/Grid";
+
 
 function App() {
+  const [open, setOpen] = useState(true);
+
   return (
-    <>
-      <DrawerLeft />
-      {/* <Revenue /> */}
-    </>
+    <div>
+      <DrawerLeft open={open} setOpen={setOpen} />
+      {/* // Fix the recenorder to work with drawerleft */}
+      <RecentOrder />
+
+
+
+    </div>
   );
 }
 
