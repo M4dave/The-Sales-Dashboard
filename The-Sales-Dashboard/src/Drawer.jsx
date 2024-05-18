@@ -1,32 +1,32 @@
-//Heading should be present in the left of the dashboard.
-
 import * as React from "react";
-import { styled, useTheme } from "@mui/material/styles";
-import Box from "@mui/material/Box";
-import MuiDrawer from "@mui/material/Drawer";
-import MuiAppBar from "@mui/material/AppBar";
-import Toolbar from "@mui/material/Toolbar";
-import List from "@mui/material/List";
-import CssBaseline from "@mui/material/CssBaseline";
-import Typography from "@mui/material/Typography";
-import Divider from "@mui/material/Divider";
-import IconButton from "@mui/material/IconButton";
-import MenuIcon from "@mui/icons-material/Menu";
-import ChevronLeftIcon from "@mui/icons-material/ChevronLeft";
-import ChevronRightIcon from "@mui/icons-material/ChevronRight";
-import ListItem from "@mui/material/ListItem";
-import ShoppingCartIcon from "@mui/icons-material/ShoppingCart";
-import ListItemIcon from "@mui/material/ListItemIcon";
-import ListItemText from "@mui/material/ListItemText";
-import NotificationsIcon from "@mui/icons-material/Notifications";
-import GroupIcon from "@mui/icons-material/Group";
-import AssignmentIcon from "@mui/icons-material/Assignment";
-import LayersIcon from "@mui/icons-material/Layers";
-import BarChartIcon from "@mui/icons-material/BarChart";
-import DashboardIcon from "@mui/icons-material/Dashboard";
+import { styled, useTheme } from "@mui/material/styles"; // Importing styled and useTheme from MUI library
+import Box from "@mui/material/Box"; // Importing Box component from MUI library
+import MuiDrawer from "@mui/material/Drawer"; // Importing Drawer component from MUI library
+import MuiAppBar from "@mui/material/AppBar"; // Importing AppBar component from MUI library
+import Toolbar from "@mui/material/Toolbar"; // Importing Toolbar component from MUI library
+import List from "@mui/material/List"; // Importing List component from MUI library
+import CssBaseline from "@mui/material/CssBaseline"; // Importing CssBaseline component from MUI library
+import Typography from "@mui/material/Typography"; // Importing Typography component from MUI library
+import Divider from "@mui/material/Divider"; // Importing Divider component from MUI library
+import IconButton from "@mui/material/IconButton"; // Importing IconButton component from MUI library
+import MenuIcon from "@mui/icons-material/Menu"; // Importing MenuIcon component from MUI library
+import ChevronLeftIcon from "@mui/icons-material/ChevronLeft"; // Importing ChevronLeftIcon component from MUI library
+import ChevronRightIcon from "@mui/icons-material/ChevronRight"; // Importing ChevronRightIcon component from MUI library
+import ListItem from "@mui/material/ListItem"; // Importing ListItem component from MUI library
+import ShoppingCartIcon from "@mui/icons-material/ShoppingCart"; // Importing ShoppingCartIcon component from MUI library
+import ListItemIcon from "@mui/material/ListItemIcon"; // Importing ListItemIcon component from MUI library
+import ListItemText from "@mui/material/ListItemText"; // Importing ListItemText component from MUI library
+import NotificationsIcon from "@mui/icons-material/Notifications"; // Importing NotificationsIcon component from MUI library
+import GroupIcon from "@mui/icons-material/Group"; // Importing GroupIcon component from MUI library
+import AssignmentIcon from "@mui/icons-material/Assignment"; // Importing AssignmentIcon component from MUI library
+import LayersIcon from "@mui/icons-material/Layers"; // Importing LayersIcon component from MUI library
+import BarChartIcon from "@mui/icons-material/BarChart"; // Importing BarChartIcon component from MUI library
+import DashboardIcon from "@mui/icons-material/Dashboard"; // Importing DashboardIcon component from MUI library
 
+// Define the width of the drawer
 const drawerWidth = 240;
 
+// Styling for the opened drawer
 const openedMixin = (theme) => ({
   width: drawerWidth,
   transition: theme.transitions.create("width", {
@@ -36,6 +36,7 @@ const openedMixin = (theme) => ({
   overflowX: "hidden",
 });
 
+// Styling for the closed drawer
 const closedMixin = (theme) => ({
   transition: theme.transitions.create("width", {
     easing: theme.transitions.easing.sharp,
@@ -48,6 +49,7 @@ const closedMixin = (theme) => ({
   },
 });
 
+// Styling for the drawer header
 const DrawerHeader = styled("div")(({ theme }) => ({
   display: "flex",
   alignItems: "center",
@@ -57,6 +59,7 @@ const DrawerHeader = styled("div")(({ theme }) => ({
   ...theme.mixins.toolbar,
 }));
 
+// Styling for the app bar
 const AppBar = styled(MuiAppBar, {
   shouldForwardProp: (prop) => prop !== "open",
 })(({ theme, open }) => ({
@@ -75,6 +78,7 @@ const AppBar = styled(MuiAppBar, {
   }),
 }));
 
+// Styling for the drawer
 const Drawer = styled(MuiDrawer, {
   shouldForwardProp: (prop) => prop !== "open",
 })(({ theme, open }) => ({
@@ -92,14 +96,17 @@ const Drawer = styled(MuiDrawer, {
   }),
 }));
 
+// Main function component
 export default function MiniDrawer() {
   const theme = useTheme();
   const [open, setOpen] = React.useState(false);
 
+  // Function to open the drawer
   const handleDrawerOpen = () => {
     setOpen(true);
   };
 
+  // Function to close the drawer
   const handleDrawerClose = () => {
     setOpen(false);
   };
@@ -108,8 +115,10 @@ export default function MiniDrawer() {
     <Box sx={{ display: "flex" }}>
       <CssBaseline />
 
+      {/* App bar */}
       <AppBar position="fixed" open={open}>
         <Toolbar>
+          {/* Menu icon */}
           <IconButton
             color="inherit"
             aria-label="open drawer"
@@ -122,9 +131,11 @@ export default function MiniDrawer() {
           >
             <MenuIcon />
           </IconButton>
+          {/* Dashboard title */}
           <Typography variant="h6" noWrap component="div">
             Dashboard
           </Typography>
+          {/* Notification icon */}
           <IconButton
             color="inherit"
             sx={{
@@ -136,8 +147,11 @@ export default function MiniDrawer() {
         </Toolbar>
       </AppBar>
 
+      {/* Drawer */}
       <Drawer variant="permanent" open={open}>
+        {/* Drawer header */}
         <DrawerHeader>
+          {/* Drawer title */}
           <Typography
             sx={{
               flexGrow: 1,
@@ -151,6 +165,7 @@ export default function MiniDrawer() {
           >
             Jollibee
           </Typography>
+          {/* Drawer close icon */}
           <IconButton onClick={handleDrawerClose}>
             {theme.direction === "rtl" ? (
               <ChevronRightIcon />
@@ -162,31 +177,37 @@ export default function MiniDrawer() {
 
         <Divider />
 
+        {/* Drawer menu items */}
         <List>
+          {/* Dashboard */}
           <ListItem button>
             <ListItemIcon>
               <DashboardIcon />
             </ListItemIcon>
             <ListItemText primary="Dashboard" />
           </ListItem>
+          {/* Order */}
           <ListItem button>
             <ListItemIcon>
               <ShoppingCartIcon />
             </ListItemIcon>
             <ListItemText primary="Order" />
           </ListItem>
+          {/* Customer */}
           <ListItem button>
             <ListItemIcon>
               <GroupIcon />
             </ListItemIcon>
             <ListItemText primary="Customer" />
           </ListItem>
+          {/* Reports */}
           <ListItem button>
             <ListItemIcon>
               <BarChartIcon />
             </ListItemIcon>
             <ListItemText primary="Reports" />
           </ListItem>
+          {/* Integrations */}
           <ListItem button>
             <ListItemIcon>
               <LayersIcon />
@@ -198,23 +219,26 @@ export default function MiniDrawer() {
         <Divider />
 
         <List>
+          {/* Saved Report */}
           <ListItem>
             <ListItemIcon></ListItemIcon>
             <ListItemText primary="Saved Report" />
           </ListItem>
-
+          {/* Current Month */}
           <ListItem button>
             <ListItemIcon>
               <AssignmentIcon />
             </ListItemIcon>
             <ListItemText primary="Current Month" />
           </ListItem>
+          {/* Last Quarter */}
           <ListItem button>
             <ListItemIcon>
               <AssignmentIcon />
             </ListItemIcon>
             <ListItemText primary="Last Quarter" />
           </ListItem>
+          {/* Year-end Sale */}
           <ListItem button>
             <ListItemIcon>
               <AssignmentIcon />

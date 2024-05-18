@@ -1,16 +1,16 @@
-import * as React from "react";
-import Link from "@mui/material/Link";
-import Table from "@mui/material/Table";
-import TableBody from "@mui/material/TableBody";
-import TableCell from "@mui/material/TableCell";
-import TableHead from "@mui/material/TableHead";
-import TableRow from "@mui/material/TableRow";
-import { mockTransactions } from "./mockData";
-
 //A box with scroll bar displaying recent transactions.
+import Link from "@mui/material/Link"; // Importing Link component from MUI library
+import Table from "@mui/material/Table"; // Importing Table component from MUI library
+import TableBody from "@mui/material/TableBody"; // Importing TableBody component from MUI library
+import TableCell from "@mui/material/TableCell"; // Importing TableCell component from MUI library
+import TableHead from "@mui/material/TableHead"; // Importing TableHead component from MUI library
+import TableRow from "@mui/material/TableRow"; // Importing TableRow component from MUI library
+import { mockTransactions } from "./mockData"; // Importing mockTransactions data from external file
 
 export function RecentOrder() {
+  // Function to prevent the default behavior of an event
   const preventDefault = (event) => event.preventDefault();
+
   return (
     <div
       style={{
@@ -22,9 +22,12 @@ export function RecentOrder() {
         overflow: "auto",
       }}
     >
+      {/* Title and Table */}
       <Table>
         <TableHead>
+          {/* Title */}
           <h1>Recent Orders</h1>
+          {/* Table Headers */}
           <TableRow>
             <TableCell>Transaction ID</TableCell>
             <TableCell>User</TableCell>
@@ -32,7 +35,8 @@ export function RecentOrder() {
             <TableCell>Cost</TableCell>
           </TableRow>
         </TableHead>
-        <TableBody sx={{}}>
+        <TableBody>
+          {/* Table Rows */}
           {mockTransactions.map((transaction) => (
             <TableRow key={transaction.txId}>
               <TableCell>{transaction.txId}</TableCell>
@@ -42,6 +46,7 @@ export function RecentOrder() {
             </TableRow>
           ))}
         </TableBody>
+        {/* Link to see more orders */}
         <Link href="#" onClick={preventDefault} sx={{ mt: 3 }}>
           See more orders
         </Link>
