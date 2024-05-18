@@ -12,11 +12,11 @@ export function RecentOrder() {
   const preventDefault = (event) => event.preventDefault();
   // Return the RecentOrder component
   return (
-    <div
+    <div // Styling for the RecentOrder component
       style={{
         position: "fixed",
-        bottom: 0,
-        right: 0,
+        bottom: 5,
+        right: 5,
         width: "83%",
         height: "300px",
         overflow: "auto",
@@ -49,7 +49,7 @@ export function RecentOrder() {
           </TableRow>
         </TableHead>
         <TableBody>
-          {/* Table Rows */}
+          {/* Table Rows Mapping through the mockTransactions data and displaying the transaction details */}
           {mockTransactions.map((transaction) => (
             <TableRow key={transaction.txId}>
               <TableCell>{transaction.txId}</TableCell>

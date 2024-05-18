@@ -115,10 +115,10 @@ export default function MiniDrawer() {
     <Box sx={{ display: "flex" }}>
       <CssBaseline />
 
-      {/* App bar */}
+      {/* AppBar component with position fixed and open prop */}
       <AppBar position="fixed" open={open}>
         <Toolbar>
-          {/* Menu icon */}
+          {/* IconButton component with color, aria-label, onClick, edge, and sx props */}
           <IconButton
             color="inherit"
             aria-label="open drawer"
@@ -131,11 +131,11 @@ export default function MiniDrawer() {
           >
             <MenuIcon />
           </IconButton>
-          {/* Dashboard title */}
+          {/* Typography component with variant, noWrap, and component props  */}
           <Typography variant="h6" noWrap component="div">
             Dashboard
           </Typography>
-          {/* Notification icon */}
+          {/* Notification IconButton component with color and sx props */}
           <IconButton
             color="inherit"
             sx={{
@@ -147,7 +147,7 @@ export default function MiniDrawer() {
         </Toolbar>
       </AppBar>
 
-      {/* Drawer */}
+      {/* Drawer component with variant, open, and sx props */}
       <Drawer variant="permanent" open={open}>
         {/* Drawer header */}
         <DrawerHeader>
@@ -178,6 +178,7 @@ export default function MiniDrawer() {
         <Divider />
 
         {/* Drawer menu items */}
+        {/* List component */}
         <List>
           {/* Dashboard */}
           <ListItem button>
