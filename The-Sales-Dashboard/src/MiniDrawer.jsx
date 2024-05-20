@@ -151,8 +151,7 @@ export default function MiniDrawer() {
       <Drawer variant="permanent" open={open}>
         {/* Drawer header */}
         <DrawerHeader>
-          {/* Drawer title */}
-          <Typography
+          <Typography // Typography component with sx, variant, noWrap, and component props
             sx={{
               flexGrow: 1,
               textAlign: "center",
@@ -165,7 +164,7 @@ export default function MiniDrawer() {
           >
             Jollibee
           </Typography>
-          {/* Drawer close icon */}
+          {/* IconButton component with onClick prop */}
           <IconButton onClick={handleDrawerClose}>
             {theme.direction === "rtl" ? (
               <ChevronRightIcon />
@@ -175,40 +174,40 @@ export default function MiniDrawer() {
           </IconButton>
         </DrawerHeader>
 
+        {/*  Divider component */}
         <Divider />
 
-        {/* Drawer menu items */}
         {/* List component */}
         <List>
-          {/* Dashboard */}
+          {/* ListItem component with button prop */}
           <ListItem button>
             <ListItemIcon>
               <DashboardIcon />
             </ListItemIcon>
             <ListItemText primary="Dashboard" />
           </ListItem>
-          {/* Order */}
+          {/* ListItem component with button prop */}
           <ListItem button>
             <ListItemIcon>
               <ShoppingCartIcon />
             </ListItemIcon>
             <ListItemText primary="Order" />
           </ListItem>
-          {/* Customer */}
+          {/* ListItem component with button prop */}
           <ListItem button>
             <ListItemIcon>
               <GroupIcon />
             </ListItemIcon>
             <ListItemText primary="Customer" />
           </ListItem>
-          {/* Reports */}
+          {/* ListItem component with button prop */}
           <ListItem button>
             <ListItemIcon>
               <BarChartIcon />
             </ListItemIcon>
             <ListItemText primary="Reports" />
           </ListItem>
-          {/* Integrations */}
+          {/* ListItem component with button prop */}
           <ListItem button>
             <ListItemIcon>
               <LayersIcon />
