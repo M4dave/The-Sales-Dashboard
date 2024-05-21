@@ -7,11 +7,9 @@ import { Typography } from "@mui/material";
 export default function Charts() {
   // Exporting the Charts component as default
   const preventDefault = (event) => event.preventDefault(); // Function to prevent the default behavior of an event
-  let revenue = 0; // Variable to store the total revenue generated
-  mockTransactions.forEach((transaction) => {
-    // Loop through the mockTransactions data and calculate the total revenue generated
-    revenue += parseFloat(transaction.cost); // Add the cost of each transaction to the total revenue
-  }); // End of the loop
+  const revenue = mockTransactions.reduce((total, transaction) => { // Calculate the total revenue generated
+    return total + parseFloat(transaction.cost); // Add the cost of each transaction to the total revenue
+  }, 0); // Initial value of the total revenue
 
   // Return the Charts component
   return (
@@ -19,7 +17,7 @@ export default function Charts() {
       style={{
         position: "fixed",
         top: 110,
-        left: "74%",
+        left: "73.7%",
         width: "25%",
         height: "300px",
         backgroundColor: "white",

@@ -67,7 +67,7 @@ export function RecentOrder() {
           onClick={preventDefault}
           sx={{ mt: 3, color: "#1976D2" }}
         >
-          See more orders
+          <Typography variant="h6" gutterBottom>See more orders</Typography>
         </Link>
       </Table>
     </div>
